@@ -1,0 +1,31 @@
+Create a fake .emacs.d for testing purposes
+
+Installation:
+
+  git clone git://github.com/tarsius/fake-emacsd.git ~/emacsd
+
+Creating an .emacs.d:
+
+  cd ~/emacsd
+  ./create-emacs.d testing
+
+Using an .emacs.d:
+
+  ~/emacsd/testing/emacs.sh
+
+In the above example ~/emacsd/testing/.emacs.d is the tempory .emacs.d
+and ~/emacsd/testing is the tempory $HOME.  emacs.sh sets $HOME before
+starting emacs.  This is necessary to prevent the tempory .emacs.d
+from spamming the real .emacs.d and $HOME with all kinds of persistent
+files.
+
+To create a specialized .emacs.d create one or all of
+
+  templates/
+    special-create.sh   sourced by create-emacs.sh
+    special.sh          becomes emacs.sh         (instead of default.sh)
+    special.el          becomes .emacs.d/init.el (instead of default.el)
+
+And run:
+
+  ./create-emacs.d testing special
