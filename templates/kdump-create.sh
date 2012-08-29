@@ -1,9 +1,16 @@
 #!/bin/sh
 
+mkdir -p $TEMP_HOME/.emacs.d/lib
+cd       $TEMP_HOME/.emacs.d
+
+clone() {
+    git clone --no-hardlinks ~/.emacs.d/lib/$1 lib/$1
+}
+
 # Libraries required for dump.
-git clone git@github.com:tarsius/kdump.git
-git clone git://github.com/tarsius/keymap-utils.git
-git clone git://github.com/emacsmirror/load-dir.git
-git clone git://github.com/emacsmirror/naked.git
-git clone git://github.com/emacsmirror/org.git
-git clone git://github.com/tarsius/packed.git
+clone kdump
+clone keymap-utils
+clone load-dir || git clone git://github.com/emacsmirror/load-dir.git lib/load-dir
+clone naked
+clone org
+clone packed
