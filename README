@@ -13,11 +13,11 @@ Using an .emacs.d:
 
   ~/emacsd/testing/emacs.sh
 
-In the above example ~/emacsd/testing/.emacs.d is the tempory .emacs.d
-and ~/emacsd/testing is the tempory $HOME.  emacs.sh sets $HOME before
-starting emacs.  This is necessary to prevent the tempory .emacs.d
-from spamming the real .emacs.d and $HOME with all kinds of persistent
-files.
+In the above example ~/emacsd/testing/.emacs.d is the tempory
+user-emacs-directory and ~/emacsd/testing is the tempory $HOME.
+
+emacs.sh sets $HOME before starting emacs.  This is necessary to avoid
+spamming the real $HOME with all kinds of persistent files.
 
 To create a specialized .emacs.d create one or all of
 
@@ -28,4 +28,4 @@ To create a specialized .emacs.d create one or all of
 
 And run:
 
-  ./create-emacs.d testing special
+  ./create-emacs.d specialized special
