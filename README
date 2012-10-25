@@ -7,7 +7,7 @@ Installation:
 Creating an .emacs.d:
 
   cd ~/emacsd
-  ./create-emacs.d testing
+  ./create-emacsd.sh testing
 
 Using an .emacs.d:
 
@@ -28,4 +28,4 @@ To create a specialized .emacs.d create one or all of
 
 And run:
 
-  ./create-emacs.d specialized special
+  ./create-emacsd.sh specialized special
