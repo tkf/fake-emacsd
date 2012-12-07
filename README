@@ -19,7 +19,7 @@ user-emacs-directory and ~/emacsd/testing is the tempory $HOME.
 emacs.sh sets $HOME before starting emacs.  This is necessary to avoid
 spamming the real $HOME with all kinds of persistent files.
 
-To create a specialized .emacs.d create one or all of
+To create a specialized .emacs.d create at least one of:
 
   templates/
     special-create.sh   sourced by create-emacs.sh
