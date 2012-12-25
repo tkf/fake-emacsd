@@ -1,6 +1,6 @@
 #!/bin/sh
 
-HOME=$(dirname $(readlink -f $0)) emacs \
+HOME=$(dirname $(readlink -f $0)) exec emacs \
 --no-site-file --no-site-lisp --no-splash \
 --debug-init --eval "
 (progn

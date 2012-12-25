@@ -16,3 +16,4 @@ trap "rm -rf $TEMP_HOME" EXIT
 
 $HOME_BASE/create-emacsd.sh $(basename $TEMP_HOME) $TEMPLATE
 $TEMP_HOME/emacs.sh "$@"
+exit "$?"
