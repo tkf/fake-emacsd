@@ -12,12 +12,12 @@ HOME=$(dirname $(readlink -f $0)) emacs \
       ...\\\"\")
   (message \"***\")
 
-  ;; Expand user-emacs-directory and user-init-file
-  ;; to avoid confusion.
+  ;; Expand user-emacs-directory and user-init-file to avoid confusion.
+  ;; The latter isn't defined in batch mode but here it is needed.
   (setq user-emacs-directory (expand-file-name user-emacs-directory))
-  (setq user-init-file       (expand-file-name user-init-file))
+  (setq user-init-file (expand-file-name \"init.el\" user-emacs-directory))
 
-  (setq init-file-user       (user-login-name))
+  (setq init-file-user (user-login-name))
 
   (message \"*** HOME:                 %s\" (getenv \"HOME\"))
   (message \"*** user-emacs-directory: %s\" user-emacs-directory)
