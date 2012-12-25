@@ -27,11 +27,20 @@ then
     test -e $TMPL_BASE/$2.el &&        TMPL_EL=$TMPL_BASE/$2.el
 fi
 
+FONTS_DIR=$HOME/.fonts
+
+if test ! -d "$FONTS_DIR"
+then
+    FONTS_DIR=
+fi
+
 echo "Creating emacsd"
 echo "  HOME:                 $TEMP_HOME"
 echo "  user-emacs-directory: $TEMP_HOME/.emacs.d"
 echo "  user-init-file:       $TEMP_HOME/.emacs.d/init.el"
 echo "  run script:           $TEMP_HOME/emacs.sh"
+test -n "$FONTS_DIR" &&
+echo "  font directory:       $TEMP_HOME/.fonts"
 echo "from"
 echo "  user-init-file:       $TMPL_EL"
 echo "  run script:           $TMPL_SH"
@@ -42,6 +51,11 @@ mkdir -p $TEMP_HOME/.emacs.d
 cp $TMPL_EL $TEMP_HOME/.emacs.d/init.el
 cp $TMPL_SH $TEMP_HOME/emacs.sh
 chmod u+x $TEMP_HOME/emacs.sh
+
+if test -n "$FONTS_DIR"
+then
+    ln -s $FONTS_DIR $TEMP_HOME
+fi
 
 if test -n "$TMPL_CREATE"
 then
