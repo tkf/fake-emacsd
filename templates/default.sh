@@ -15,7 +15,7 @@ HOME=$(dirname $(readlink -f $0)) emacs \
   ;; Expand user-emacs-directory and user-init-file
   ;; to avoid confusion.
   (setq user-emacs-directory (expand-file-name user-emacs-directory))
-  (setq user-init-file       (expand-file-name user-init-file))
+  (setq user-init-file       (expand-file-name \"~/.emacs.d/init.el\"))
 
   (setq init-file-user       (user-login-name))
 
