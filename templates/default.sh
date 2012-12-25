@@ -33,4 +33,5 @@ HOME=$(dirname $(readlink -f $0)) emacs \
 
   (add-hook 'emacs-startup-hook
             (lambda ()
-              (switch-to-buffer (get-buffer \"*Messages*\")))))"
+              (switch-to-buffer (get-buffer \"*Messages*\")))))" \
+"$@"
